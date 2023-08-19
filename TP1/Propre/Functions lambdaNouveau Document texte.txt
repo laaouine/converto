@@ -1,0 +1,53 @@
+void main() {
+  String sayHello(){
+    return "Hello";
+  }
+  
+  var result = sayHello();
+  print(result);
+  
+  int sum(int a, int b){
+    return a+b;
+  }
+  
+  int sumMany(List<int> sommes){
+    var result = 0;
+    for (int i =0; i < sommes.length; i++){
+      result += sommes[i];
+    }
+    return result;
+  }
+  
+  void sumAndPrint(num t, num tt, bool shouldPrint ){
+    //var sh =shouldPrint;
+    if(shouldPrint){
+      print(t+tt);
+    } 
+    
+    num result = t+tt;
+  }
+  
+  num sumAndFormat(int a, int b, bool ft){
+    
+    if(ft){
+      int result = (a+b).toInt();
+    }
+    double result = (a+b).toDouble();
+    
+    return result;
+    
+  }
+  
+  
+  String strReverse(String message) => message.split('').reversed.join();
+  
+  String hello = "hello";
+  
+  String reversed = strReverse(hello);
+  print(reversed);
+  
+  
+  
+  
+  
+}

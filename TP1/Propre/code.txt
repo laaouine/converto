@@ -1,0 +1,270 @@
+void main() {
+  var message= "Hellow, World";
+  
+  const hello = "Hello";
+  const world = "World";
+  const messages = "Hellow, world";  
+  print(messages);
+  //print(message[0-5]);
+  print(hello+ ","+world);
+  
+  
+  print(message.length);
+}
+
+7)
+const String welcome = "Hello, World !";
+  print(welcome.replaceAll("l", "1").replaceAll("e", "3").replaceAll("o", "8"));
+
+8)
+void main() {
+  // a partir du 7
+
+  const String welcome = "Hello, World !";
+  print(welcome.replaceAll("l", "1").replaceAll("e", "3").replaceAll("o", "8"));
+  
+  
+  const String welcome2 = "hello world";
+  
+  List result = welcome2.split(' ');
+  print(result);
+  
+  
+}
+
+9)&10
+void main() {
+  // a partir du 7
+
+  var pwd = "";
+  var mail = "john@doe.com";
+  
+  pwd.length >0 ? print("Mdp est fournit") : print("Mot de passe non fournti");
+  
+  
+  bool containsAny(String x, List<String> xx){
+    for (var xx in xx){
+      if(x.contains(xx)) return true;
+  }
+    return false;
+  }
+  List<String> verif = ['@','.'];
+  var result = containsAny(mail, verif);
+  
+  result ? print("It's an email") : print ("Thats not an email");
+  
+  
+}
+
+
+NUMBERS
+void main() {
+  int price01 = 15;
+  double price02 = 15.5;
+  
+  print("La valeur du variable Price01 est : ${price01}");
+  print("La valeur du variable Price02 est : ${price02}");
+  
+  var sum = price02 + price01;
+  print("La valeur du variable Sum est : ${sum}");
+  
+  var sumInt = sum.toInt();
+  print("La somme en entier est : ${sumInt}");
+  
+  
+  final String strSeven = "7";
+  final int numSeven = int.parse(strSeven);
+  print(numSeven);
+  
+  
+}
+
+
+
+COLLECTION
+void main() {
+  
+  List<String> planets = [];
+  
+  planets.add("Terre");
+   planets.add("Mars");
+   planets.add("Mercure");
+   planets.add("Saturne");
+   planets.add("Venus");
+   planets.add("Neptune");
+   planets.add("Uranus");
+   planets.add("Jupiter");
+  
+  print(planets);
+  print("----------------------------------------------------------");
+  
+  for (int i = 0; i < planets.length; i++){
+    var courant = planets[i];
+    print(courant.toUpperCase());
+  }
+  print("--------------------------------------------------------");
+  var i = 0;
+  while ( i < planets.length ){
+    
+    print(planets[i][0]);
+    i++;
+  }
+  print("-------------------------------------------------------");
+  var j = 0;
+  do {
+    
+    print("${j+1} : ${planets[j]}");
+  }while(j < planets.length);
+
+var i = 0;
+  
+  while (i < planets.length){
+    var courant = planets[i];
+    var index = courant.length;
+    List<String> vil = ['a','e','i','o','u','y'];
+    
+    if(vil.contains(courant[index-1])){
+      print(courant);
+    }
+    i++;
+  }
+
+
+planets.add("Pluton");
+  print(planets);
+}
+  
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+7)
+
+
+class Planetss {
+    final String name;
+    final double distanceFromEarth;
+    
+    Planetss({required this.name, required this.distanceFromEarth}); 
+  
+    @override
+    toString(){
+      return 'Planetss(name:"${name}")';
+      
+    }
+  }
+
+
+
+void main() {
+  
+  List<Planetss> planet = [];
+  
+  print("--------------------------------------POO-----------------------------------------");
+  Planetss Mercure =  Planetss(name:"Mercure",distanceFromEarth:91.69);
+  Planetss Saturne =  Planetss(name:"Saturne",distanceFromEarth:1275);
+  Planetss Neptune =  Planetss(name:"Neptune",distanceFromEarth:4351.40);
+  Planetss Jupiter =  Planetss(name:"Jupiter",distanceFromEarth:628.73);
+  Planetss Mars =  Planetss(name:"Mars",distanceFromEarth:78.34);
+  Planetss Venus =  Planetss(name:"Venus",distanceFromEarth:41.40);
+  Planetss Uranus =  Planetss(name:"Uranus",distanceFromEarth:2723.95);
+  
+  planet.add(Mercure);
+  planet.add(Saturne);
+  planet.add(Neptune);
+  planet.add(Jupiter);
+  planet.add(Mars);
+  planet.add(Venus);
+  planet.add(Uranus);
+  
+  
+  //planet.sort();
+  planet.sort((a,b) => a.distanceFromEarth.compareTo(b.distanceFromEarth));
+  print(planet);
+  
+}
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+8)
+
+
+
+/*
+
+finito ************
+
+enum Kind {planet, star, satellite, asteroid, comet}
+
+class SolarSystemElement {
+  
+  String name;
+  Kind kindset;
+  
+  SolarSystemElement({required this.name, required this.kindset});
+  
+  String toString(){
+    return "name : ${this.name}, kindset : ${kindset} .";
+  }
+  
+}
+
+void main() {
+  
+  var apollo = {
+    
+    "07_1969" : "apollo 11",
+    "11_1969" : "Apollo 12",
+    "02_1971" : "Apollo 14",
+    "07-1971" : "Apollo 15",
+    "04_1972" : "Apollo 16",
+    "12_1972" : "Apollo 17"
+  };
+  
+  
+  //Planetss(name:"Mercure",distanceFromEarth:91.69);
+  SolarSystemElement s1 = SolarSystemElement(name: "S1", kindset: Kind.star);
+  SolarSystemElement s2 = SolarSystemElement(name: "S2", kindset: Kind.planet);
+  SolarSystemElement s3 = SolarSystemElement(name: "S3", kindset: Kind.satellite);
+  SolarSystemElement s4 = SolarSystemElement(name: "S4", kindset: Kind.satellite);
+  
+  
+  List<SolarSystemElement> solars = [];
+  
+  solars.add(s1);
+  solars.add(s2);
+  solars.add(s3);
+  solars.add(s4);
+  
+  print(solars.toString());  
+  
+  
+  print(apollo);
+  print(apollo.length);
+  
+  
+  print("la valeur correspendant à 07_1971 est : ");
+  var result = apollo["07-1971"];
+  print(result);
+  
+  print(apollo.keys);
+  print(apollo.values);
+  
+  apollo["07-1971"] = "Laaouine";
+  print("-----------------------------------------------------------------");
+  var result2 = apollo["07-1971"];
+  print(result2);
+  
+  print("-----------------------------------------------------------------");
+  
+  
+  
+  
+  
+  
+  
+}
+
